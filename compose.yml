@@ -2,7 +2,7 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/compose-spec/compose-spec/main/schema/compose-spec.json
 services:
   caddy:
-    image: caddy:2.11.7-alpine@sha256:e70b164da81ef698b3ad19af799ea6086ce6d9e48ed4079eb9fe26f6fbf14ee5
+    image: caddy:2.11.7-alpine
     restart: always
     ports:
       - "${HTTP_PORT:-80}:80"
@@ -63,7 +63,7 @@ services:
       - ghost_network
 
   db:
-    image: mysql:8.0.46@sha256:7dcddc01f13bab2f15cde676d44d01f61fc9f99fe7785e86196dfc07d358ae2b
+    image: mysql:8.0.46
     restart: always
     expose:
       - "3306"
@@ -86,7 +86,7 @@ services:
       - ghost_network
 
   traffic-analytics:
-    image: ghost/traffic-analytics:1.0.526@sha256:3d4aed3fe5f1ce3be02033cea513248be5bff61c6faa29dd3818aa2841ab5b00
+    image: ghost/traffic-analytics:1.0.526
     restart: always
     expose:
       - "3000"
